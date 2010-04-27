@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COUNT=$(./anyl.sh)
-FOO=$(echo $COUNT | tr " " "\n" | sort | uniq)
+FOO=$(echo $COUNT | tr " " "\n" | sort -n | uniq)
 
 FIRST=$(echo $FOO | tr " " "\n" | head -n 1)
 LAST=$(echo $FOO | tr " " "\n" | tail -n 1)
@@ -19,8 +19,10 @@ for a in $FOO; do
 	LIST="$LIST $RES"
 done
 
-LFIRST=$(echo $LIST | tr " " "\n" | sort | head -n 1)
-LLAST=$(echo $LIST | tr " " "\n" | sort | tail -n 1)
+# echo $LIST | tr " " "\n" | sort -n
+
+LFIRST=$(echo $LIST | tr " " "\n" | sort -n | head -n 1)
+LLAST=$(echo $LIST | tr " " "\n" | sort -n | tail -n 1)
 
 let LLAST=$LLAST+10
 
