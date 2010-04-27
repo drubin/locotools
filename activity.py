@@ -7,7 +7,7 @@ cachedir = "/home/tag/.launchpadlib/cache"
 
 launchpad = Launchpad.login_anonymously('LoCoCouncil Activity Audit', 'production', cachedir)
 
-team = "ubuntu-us-ohio"
+team = "ubuntu-us"
 
 team = launchpad.people[team]
 members = team.members_details
