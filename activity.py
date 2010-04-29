@@ -6,14 +6,9 @@ app_name  = "LoCo Council Audit"
 # This will tell LP what is running
 # This should only be changed if that string is wrong.
 
-team      = "ubuntu-ru"
-# Team to audit
-
-output    = "dataset"
+output    = "./data/dataset"
 # This will be combined with the team name to set up
 # the output file ( output-team-name )
-
-
 
 
 ##
@@ -26,9 +21,15 @@ import time
 import datetime
 import os
 import json
+import sys
 
 server    = 'edge'
 cachedir  = os.path.expanduser("~/.launchpadlib/cache")
+
+print "Enter the Launchpad team name, plox"
+
+team = sys.stdin.readline().strip()
+
 
 output = output + "-" + team
 
