@@ -11,6 +11,7 @@ function writeBarData( $data, $graph ) {
 		$counter = 0;
 		$toggle = true;
 		$data = array_reverse (  $data, TRUE );
+
 		foreach( $data as $key => $value ) {
 			if ( $toggle ) {
 				$toggle = false;
@@ -24,8 +25,8 @@ function writeBarData( $data, $graph ) {
 				$toggle = true;
 				$counter = 0;
 			}
+			sort( $dataset1, SORT_NUMERIC );
 		}
-
   // Dataset definition 
   $DataSet = new pData;
   $DataSet->AddPoint($dataset2, "Serie1");
