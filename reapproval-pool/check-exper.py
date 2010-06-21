@@ -99,13 +99,11 @@ for member in members:
     except HTTPError, e:
 	print "  Error! We've had an HTTP Error"
 
+print "Criticals:"
+print critical_spool
 print "\n\n"
 print "Warnings:"
 print warning_spool
-
-print "\n\n"
-print "Criticals:"
-print critical_spool
 
 #print "\n\n"
 #print "Clean:"
