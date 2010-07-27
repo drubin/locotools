@@ -11,21 +11,15 @@ function writeBarData( $data, $graph ) {
 		$counter = 0;
 		$toggle = true;
 		$data = array_reverse (  $data, TRUE );
-
+        ksort($data);
 		foreach( $data as $key => $value ) {
-			if ( $toggle ) {
-				$toggle = false;
-			} else {
+			if ( $counter % 5 != 0 ) {
 				$key = " ";
-			}
+			} 
 			array_push( $dataset1, $key );
 			array_push( $dataset2, $value );
 			$counter++;
-			if ( $counter > 3 ) {
-				$toggle = true;
-				$counter = 0;
-			}
-			sort( $dataset1, SORT_NUMERIC );
+			
 		}
   // Dataset definition 
   $DataSet = new pData;
@@ -154,7 +148,7 @@ body {
 				<h2>Membership by Month</h2>
 				<img src = "$team-bar.png" alt = "monthly chart" />
 
-				<h2>Membership by Month</h2>
+				<h2>Membership by Year</h2>
 				<img src = "$team-pie.png" alt = "yearly chart" />
 
 				<h2>Raw Stats</h2>
